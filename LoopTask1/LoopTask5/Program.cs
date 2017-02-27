@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LoopTask3
+namespace LoopTask5
 {
     class Program
     {
@@ -18,24 +18,23 @@ namespace LoopTask3
                 Console.WriteLine("Syötä kokonaisluku!");
             }
             int odd = 0, even = 0;
-            if (number > 0)
+            int negative = number < 0 ? -1 : 1;
+            for(int i = 1; i <= number * negative; i++)
             {
-                for (int i = 1; i <= number; i++)
                 {
                     if (i % 2 == 0)
                     {
-                        even += i;
+                        even += i * negative;
                     }
                     else
                     {
-                        odd += i;
+                        odd += i * negative;
                     }
                 }
                 msg = string.Format("Parittomien summa: {0}, Parillisten summa: {1}", odd, even);
             }
             Console.WriteLine("Vastaus: {0}", msg);
             Console.ReadKey();
-        }  
         }
     }
-
+}
